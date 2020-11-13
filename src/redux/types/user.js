@@ -1,0 +1,2 @@
+export const LOGIN_USER = 'LOGIN_USER'
+export const REGSITER_USER = 'REGSITER_USER'
