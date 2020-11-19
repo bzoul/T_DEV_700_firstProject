@@ -1,41 +1,17 @@
 
 
 import React, { useEffect } from 'react';
-import { Navigation } from 'react-native-navigation'
+import { Text } from 'react-native'
 import { createStore } from 'redux'
-import reducer from './reducers/index'
+import reducer from './src/redux/reducer/index'
 
 const store = createStore(reducer)
 console.log('Initial redux state', store.getState())
 
-
 const App = () => {
-  useEffect(() => {
-    // Navigation.setRoot({
-    //   root: {
-    //     bottomTabs: {
-    //       children: [
-    //         {
-    //           component: {
-    //             name: 'Settings',
-    //             options: {
-    //               bottomTab: {
-    //                 text: 'Settings',
-    //                 // icon: require('../images/home.png')
-    //               }
-    //             }
-    //           }
-    //         },
-    //       ],
-    //       options: {} 
-    //     }
-    //   }
-    // });
-  }, [])
-  
   return (
     <>
-      Terminal
+      <Text>Welcome react</Text>
     </>
   );
 };
