@@ -8,7 +8,11 @@ const initialState = {
 const user = (state = initialState, action) => {
   switch(action.type) {
     case LOGIN_USER:
-      return initialState
+      // Call api login 
+      // Set token
+      // Res
+      console.log('CALL LOGIN', action.payload)
+      return state;
     case REGSITER_USER:
       return initialState
     default:

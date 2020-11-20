@@ -8,6 +8,7 @@ const HTTP = axios.create({
 HTTP.interceptors.request.use(config => {
   config.headers["Content-Type"] = "application/json";
   config.headers["Accept"] = "application/json";
+  // config.headers["Authorization"] = ''
   return config;
 });
 

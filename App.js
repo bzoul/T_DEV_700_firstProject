@@ -1,18 +1,20 @@
 
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Text } from 'react-native'
-import { createStore } from 'redux'
-import reducer from './src/redux/reducer/index'
+import rootReducer from './src/redux/reducer/index';
+import ReduxThunk from 'redux-thunk';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware} from "redux";
+import Home from './src/views/Home'
 
-const store = createStore(reducer)
-console.log('Initial redux state', store.getState())
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const App = () => {
   return (
-    <>
-      <Text>Welcome react</Text>
-    </>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 };
 
