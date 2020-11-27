@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Text, TextInput, View ,Button, StyleSheet } from 'react-native'
 
 const logIn = () => {
@@ -8,21 +8,19 @@ const logIn = () => {
         <TextInput
           style={styles.input_text}
           placeholder="User Name"
-          
           defaultValue={text}
         />
         <TextInput
           style={styles.input_text}
           placeholder="Password"
-          
           defaultValue={text}
         />
         <Button title="LOG IN" styles= {styles.button_log}/>
         <Text style={styles.register}> create your account </Text>
         <Button style= {styles.button_log} title="register" />
       </View>
-       );
-    }
+    );
+}
 
 const styles = StyleSheet.create ({
     main_container: {
