@@ -9,7 +9,7 @@ INSERT INTO roles(name) VALUES('ROLE_USER');
 INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
 INSERT INTO roles(name) VALUES('ROLE_ADMIN');
 ```
-##Routes de l'API :
+## Routes de l'API :
 
 	- POST : /apiCashManager/auth/signin -> Se connecter
 	- POST : /apiCashManager/auth/signup -> S'inscrire
