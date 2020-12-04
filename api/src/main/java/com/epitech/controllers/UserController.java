@@ -22,7 +22,7 @@ import com.epitech.models.User;
 import com.epitech.repository.UserRepository;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/apiCashManager")
 public class UserController {
 	
 	@Autowired
@@ -37,7 +37,7 @@ public class UserController {
 	public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long userId)
 			throws ResourceNotFoundException {
 		User user = userRepository.findById(userId)
-				.orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
+				.orElseThrow(() -> new ResourceNotFoundException("User not found for this id : " + userId));
 		return ResponseEntity.ok().body(user);
 	}
 
@@ -50,7 +50,7 @@ public class UserController {
 	public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long userId,
 			@Valid @RequestBody User userDetails) throws ResourceNotFoundException {
 		User user = userRepository.findById(userId)
-				.orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
+				.orElseThrow(() -> new ResourceNotFoundException("User not found for this id : " + userId));
 
 		user.setUsername(userDetails.getUsername());
 		user.setPassword(userDetails.getPassword());
@@ -63,7 +63,7 @@ public class UserController {
 	public Map<String, Boolean> deleteUser(@PathVariable(value = "id") Long userId)
 			throws ResourceNotFoundException {
 		User user = userRepository.findById(userId)
-				.orElseThrow(() -> new ResourceNotFoundException("User not found for this id :: " + userId));
+				.orElseThrow(() -> new ResourceNotFoundException("User not found for this id : " + userId));
 
 		userRepository.delete(user);
 		Map<String, Boolean> response = new HashMap<>();

@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.epitech.models.EnumRole;
 import com.epitech.models.Role;
 import com.epitech.models.User;
-import com.epitech.payload.request.LoginRequest;
-import com.epitech.payload.request.SignupRequest;
+import com.epitech.payload.request.Login;
+import com.epitech.payload.request.Signup;
 import com.epitech.payload.response.JwtResponse;
 import com.epitech.payload.response.MessageResponse;
 import com.epitech.repository.RoleRepository;
@@ -34,7 +34,7 @@ import com.epitech.security.services.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/apiCashManager/auth")
 public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -52,7 +52,7 @@ public class AuthController {
 	JwtUtils jwtUtils;
 
 	@PostMapping("/signin")
-	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+	public ResponseEntity<?> authenticateUser(@Valid @RequestBody Login loginRequest) {
 
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -73,7 +73,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody Signup signUpRequest) {
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity
 					.badRequest()

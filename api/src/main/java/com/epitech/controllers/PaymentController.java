@@ -22,7 +22,7 @@ import com.epitech.models.Payment;
 import com.epitech.repository.PaymentRepository;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/apiCashManager")
 public class PaymentController {
 	
 	@Autowired

@@ -22,7 +22,7 @@ import com.epitech.models.Article;
 import com.epitech.repository.ArticleRepository;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/apiCashManager")
 public class ArticleController {
 	
 	@Autowired

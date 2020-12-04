@@ -2,7 +2,7 @@ package com.epitech.payload.request;
 
 import javax.validation.constraints.NotBlank;
 
-public class LoginRequest {
+public class Login {
 	@NotBlank
 	private String username;
 
