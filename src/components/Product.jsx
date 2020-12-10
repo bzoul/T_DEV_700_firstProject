@@ -3,7 +3,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { addToCart, removeFromCart } from '../redux/actions/cart'
+import { addToCart, removeFromCart, removeOneItemFromCart } from '../redux/actions/cart'
 
 
 const Product = ({ id, name, price, desc, img, qty }) => {
@@ -16,6 +16,10 @@ const Product = ({ id, name, price, desc, img, qty }) => {
 
   const removeProduct = () => {
     removeFromCart({ id: id, name: name, price: price, desc: desc, img: img })(dispatch);
+  }
+
+  const removeOne = () => {
+    removeOneItemFromCart({ id: id, name: name, price: price, desc: desc, img: img })(dispatch);
   }
 
   return (
