@@ -7,6 +7,8 @@ import Home from './src/views/Home';
 import Login from './src/views/Login';
 import { Router, Scene, Stack } from 'react-native-router-flux';
 import Cart from './src/views/Cart';
+import NFCView from './src/views/NFC';
+import QRView from './src/views/QR';
 
 
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
@@ -19,6 +21,8 @@ const App = () => {
           <Scene key="login" component={Login} hideNavBar/>
           <Scene key="home" component={Home} initial={true} hideNavBar />
           <Scene key="cart" component={Cart} hideNavBar />
+          <Scene key="nfc" component={NFCView} hideNavBar />
+          <Scene key="qr" component={QRView} hideNavBar />
         </Stack>
       </Router>
     </Provider>
