@@ -8,13 +8,13 @@ const Home = () => {
 
   useEffect(() => {
     const arr = [
-      { id: 0, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
-      { id: 1, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
-      { id: 2, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
-      { id: 3, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
-      { id: 4, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
-      { id: 5, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
-      { id: 6, name: 'Coca', price: 1, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 0, name: 'Coca', price: 10, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 1, name: 'Coca', price: 7, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 2, name: 'Coca', price: 87, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 3, name: 'Coca', price: 3, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 4, name: 'Coca', price: 15, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 5, name: 'Coca', price: 25, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
+      { id: 6, name: 'Coca', price: 14, desc: 'Lol', img: 'https://www.sushimarket35.com/153-large_default/a1-coca-light-zero.jpg'},
     ]
     setList(arr)
   }, [])

@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet, Text } from 'react-native';
 import ProductList from '../components/ProductList';
 
 const Cart = () => {
   const cart = useSelector(state => state.cart.cart);
+  const [total, setTotal] = useState(0);
 
-  console.log(cart);
+  const calcCart = () => {
+    let tmp = 0;
+    cart.forEach((elem) => {
+      tmp += elem.price * elem.qty 
+    })
+    setTotal(tmp);
+  }
+
+  useEffect(() => {
+    calcCart()
+  }, [cart])
 
   return (<>
     <View style={styles.view}>
@@ -14,6 +25,9 @@ const Cart = () => {
         <ScrollView style={styles.scroll}>
           <ProductList input={cart} />
         </ScrollView>
+      </View>
+      <View>
+        <Text>Total price: { total }</Text>
       </View>
     </View>
   </>)

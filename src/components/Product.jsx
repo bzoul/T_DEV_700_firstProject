@@ -29,7 +29,7 @@ const Product = ({ id, name, price, desc, img, qty }) => {
           <Text style={styles.title_text}>{name}</Text>
           <Text style={styles.prix}>{price}</Text>
         </View>
-        { qty ? <Text style={styles.prix}>Quantité: {qty}</Text> : undefined }
+        { qty ? <Text>Quantité: {qty}</Text> : undefined }
         <View style={styles.description_container}>
           <Text style={styles.description_text} numberOfLines={6}>{desc}</Text>
           {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   prix: {
     fontWeight: 'bold',
     fontSize: 16,
+    width: '20%',
     color: '#666666'
   },
   description_container: {
