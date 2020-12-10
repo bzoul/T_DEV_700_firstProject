@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Text, TextInput, View ,Button, StyleSheet } from 'react-native'
 
-const logIn = () => {
+const LoginComponent = () => {
     const [text, setText] = useState('');
     return (
       <View style={styles.main_container}>
@@ -30,7 +30,7 @@ const styles = StyleSheet.create ({
         marginRight: 30
     },
     input_text: {
-        flex: 2
+        flex: 2,
     },
     button_log: {
         height: 20,
@@ -40,4 +40,4 @@ const styles = StyleSheet.create ({
       textAlign:'center'
     }
 })
-export default logIn;
+export default LoginComponent;

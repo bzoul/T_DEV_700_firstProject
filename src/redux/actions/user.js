@@ -1,8 +1,10 @@
 // import apiManager from "../../http/apiManager";
 
+import { LOGIN_USER } from "../types/user";
+
 export const login = (name, password) => dispatch => {
     return dispatch({
-      type: LOGIN,
+      type: LOGIN_USER,
       payload: { username: 'lol', email: 'lol'}
     })
     // return apiManager.login(name, password).then((res) => {

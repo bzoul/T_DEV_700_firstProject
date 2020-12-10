@@ -11,6 +11,7 @@ const user = (state = initialState, action) => {
       // Call api login 
       // Set token
       // Res
+      state.username = action.payload.username
       console.log('CALL LOGIN', action.payload)
       return state;
     case REGSITER_USER:

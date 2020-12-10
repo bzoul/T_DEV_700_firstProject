@@ -1,7 +1,7 @@
 import React from 'react'
 import {Text, TextInput, View ,Button, StyleSheet } from 'react-native'
 
-const logIn = () => {
+const Register = () => {
     return (
       <View style={styles.main_container}>
         <TextInput
@@ -37,4 +37,4 @@ const styles = StyleSheet.create ({
         width: 50
     }
 })
-export default logIn;
+export default Register;
