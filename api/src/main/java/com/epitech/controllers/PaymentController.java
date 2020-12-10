@@ -59,6 +59,7 @@ public class PaymentController {
 		payment.setNumcb(paymentDetails.getNumcb());
 		payment.setExpiration(paymentDetails.getExpiration());
 		payment.setCvv(paymentDetails.getCvv());
+		payment.setUserId(paymentDetails.getUserId());
 
 		final Payment updatedPayment = paymentRepository.save(payment);
 		return ResponseEntity.ok(updatedPayment);

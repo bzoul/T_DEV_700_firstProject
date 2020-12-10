@@ -35,13 +35,16 @@ public class Payment {
 	
 	@Column(name = "pay_cvv")
 	private int cvv;
+	
+	@Column(name = "user_id")
+	private Long userId;
 
 	public Payment() {
 		super();
 	}
 
 	public Payment(long id, String status, String method, float total, String cart, String numcb, String expiration,
-			int cvv) {
+			int cvv, Long userId) {
 		super();
 		this.id = id;
 		this.status = status;
@@ -51,6 +54,7 @@ public class Payment {
 		this.numcb = numcb;
 		this.expiration = expiration;
 		this.cvv = cvv;
+		this.userId = userId;
 	}
 
 	public long getId() {
@@ -115,5 +119,13 @@ public class Payment {
 
 	public void setCvv(int cvv) {
 		this.cvv = cvv;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
 	}
 }
