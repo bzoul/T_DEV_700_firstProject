@@ -3,7 +3,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../redux/actions/cart'
+import { addToCart, removeFromCart } from '../redux/actions/cart'
 
 
 const Product = ({ id, name, price, desc, img, qty }) => {
@@ -12,6 +12,10 @@ const Product = ({ id, name, price, desc, img, qty }) => {
 
   const addProduct = () => {
     addToCart({ id: id, name: name, price: price, desc: desc, img: img })(dispatch)
+  }
+
+  const removeProduct = () => {
+    removeFromCart({ id: id, name: name, price: price, desc: desc, img: img })(dispatch);
   }
 
   return (
@@ -31,7 +35,7 @@ const Product = ({ id, name, price, desc, img, qty }) => {
           {/* La propriété numberOfLines permet de couper un texte si celui-ci est trop long, il suffit de définir un nombre maximum de ligne */}
         </View>
         <View style={styles.date_container}>
-          { !qty ? <TouchableOpacity style={styles.btn} onPress={addProduct}><Text style={styles.btnText}>Ajouter</Text></TouchableOpacity> : <Text></Text> }
+          { !qty ? <TouchableOpacity style={styles.btn} onPress={addProduct}><Text style={styles.btnText}>Ajouter</Text></TouchableOpacity> : <TouchableOpacity style={styles.btn} onPress={removeProduct}><Text style={styles.btnText}>Retirer</Text></TouchableOpacity> }
           
           <Text style={styles.nb_Produit}>{"nombre de produit"}</Text>
         </View>

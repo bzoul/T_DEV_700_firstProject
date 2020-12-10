@@ -1,4 +1,4 @@
-import { ADD_CART } from '../types/cart'
+import { ADD_CART, REMOVE_ARTICLE } from '../types/cart'
 
 const initialState = {
   cart: []
@@ -17,6 +17,9 @@ const cart = (state = initialState, action) => {
         state.cart.push(article);
       else
         state.cart[exist].qty++
+      return state;
+    case REMOVE_ARTICLE:
+      state.cart = state.cart.filter((elem) => elem.id !== action.payload.id)
       console.log(state.cart);
       return state;
     default:
