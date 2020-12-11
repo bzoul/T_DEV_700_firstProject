@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { View, ScrollView, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import ProductList from '../components/ProductList';
 import { Actions } from 'react-native-router-flux';
+import { setTotalPrice } from '../redux/actions/cart';
 
 const Cart = () => {
   const cart = useSelector(state => state.cart.cart);
-  const [total, setTotal] = useState(0);
+  const dispatch = useDispatch();
+  const total = useSelector((state) => state.cart.total)
 
   const calcCart = () => {
     let tmp = 0;
     cart.forEach((elem) => {
       tmp += elem.price * elem.qty 
     })
-    setTotal(tmp);
+    setTotalPrice(tmp)(dispatch)
   }
 
   const goBack = () => {
@@ -26,6 +28,7 @@ const Cart = () => {
 
   useEffect(() => {
     calcCart()
+    
   }, [cart])
 
   return (<>

@@ -1,7 +1,8 @@
-import { ADD_CART, REMOVE_ARTICLE, REMOVE_ONE } from '../types/cart'
+import { ADD_CART, REMOVE_ARTICLE, REMOVE_ONE, SET_TOTAL } from '../types/cart'
 
 const initialState = {
-  cart: []
+  cart: [],
+  total: 0,
 };
 
 const cart = (state = initialState, action) => {
@@ -29,6 +30,10 @@ const cart = (state = initialState, action) => {
       }
       if (index !== -1 && state.cart[index].qty > 0)
         state.cart[index].qty--;
+      return state;
+    case SET_TOTAL:
+      state.total = action.payload;
+      return state;
     default:
       return state;
   }
