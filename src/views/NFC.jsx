@@ -21,10 +21,10 @@ const NFCView = () => {
 
   return (
     <>
-      <Text>{ total }</Text>
+      <Text>Payment successfully done with total { total }</Text>
       <Text>{ card.cardType }</Text>
       <Text>{ card.expiryDate }</Text>
-      <Text>{ card.cardNumber }</Text>
+      <Text>{ card.cardNumber ? card.cardNumber.substring(0, 4) : '****' } **** **** ****</Text>
     </>
   )
 }
